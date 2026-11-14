@@ -1,0 +1,16 @@
+<%@ include file="/WEB-INF/views/top.jspf" %>
+<body><div class="layout">
+<aside><h2>🎓 CampusConnect</h2>
+  <c:if test="${sessionScope.role=='ADMIN'}">
+    <a href="${ctx}/dashboard" class="${view=='dashboard'?'on':''}">📊 Dashboard</a>
+    <a href="${ctx}/students" class="${view=='students'?'on':''}">🎓 Students</a>
+    <a href="${ctx}/attendance" class="${view=='attendance'?'on':''}">🗓️ Attendance</a>
+    <a href="${ctx}/marks" class="${view=='marks'?'on':''}">📝 Marks &amp; Results</a>
+    <a href="${ctx}/courses" class="${view=='courses'?'on':''}">📚 Courses</a>
+  </c:if>
+  <c:if test="${sessionScope.role!='ADMIN'}"><a href="${ctx}/profile" class="on">👤 My Profile</a></c:if>
+  <a href="${ctx}/logout">🚪 Logout</a>
+</aside>
+<main>
+<div class="top"><div><button id="menu" class="btn sm">☰</button> <h1 style="display:inline">${title}</h1></div>
+  <span>👤 <c:out value="${sessionScope.user}"/> (${sessionScope.role})</span></div>

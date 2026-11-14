@@ -1,0 +1,2 @@
+<div id="toast" data-msg="<c:out value='${msg}'/>" data-err="<c:out value='${err}'/>"></div>
+<script src="${ctx}/js/app.js"></script></body></html>
